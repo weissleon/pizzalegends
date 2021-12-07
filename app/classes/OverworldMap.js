@@ -1,4 +1,6 @@
 import GameObject from './GameObject.js';
+import Person from './Person.js';
+import { withGrid } from './utils.js';
 
 class OverworldMap {
 	constructor(config) {
@@ -25,12 +27,13 @@ window.OverworldMaps = {
 		lowerSrc: '/images/maps/DemoLower.png',
 		upperSrc: '/images/maps/DemoUpper.png',
 		gameObjects: {
-			hero: new GameObject({
-				position: { x: 5, y: 6 },
+			hero: new Person({
+				isPlayerControlled: true,
+				position: { x: withGrid(5), y: withGrid(6) },
 				src: '/images/characters/people/hero.png',
 			}),
-			npc1: new GameObject({
-				position: { x: 7, y: 9 },
+			npc1: new Person({
+				position: { x: withGrid(7), y: withGrid(9) },
 				src: '/images/characters/people/npc1.png',
 			}),
 		},
@@ -40,15 +43,15 @@ window.OverworldMaps = {
 		upperSrc: '/images/maps/KitchenUpper.png',
 		gameObjects: {
 			hero: new GameObject({
-				position: { x: 3, y: 5 },
+				position: { x: withGrid(3), y: withGrid(5) },
 				src: '/images/characters/people/hero.png',
 			}),
 			npc2: new GameObject({
-				position: { x: 9, y: 6 },
+				position: { x: withGrid(9), y: withGrid(6) },
 				src: '/images/characters/people/npc2.png',
 			}),
 			npc3: new GameObject({
-				position: { x: 10, y: 8 },
+				position: { x: withGrid(10), y: withGrid(8) },
 				src: '/images/characters/people/npc3.png',
 			}),
 		},
